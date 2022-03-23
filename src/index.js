@@ -1,17 +1,80 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "./react";
+import ReactDOM from "./react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// const element = (
+//   <div id="A1" style={{ color: "red" }}>
+//     A1
+//     <div id="B1" style={{ color: "red" }}>
+//       B1
+//       <div style={{ color: "red" }}>C1</div>
+//       <div style={{ color: "red" }}>C2</div>
+//     </div>
+//     <div id="B2" style={{ color: "red" }}>
+//       B2
+//     </div>
+//   </div>
+// );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// ReactDOM.render(element, document.getElementById("root"));
+
+// document.getElementById("btn1").addEventListener(
+//   "click",
+//   () => {
+//     const element2 = (
+//       <div id="A1" style={{ color: "red" }}>
+//         A1_new
+//         <div id="B1" style={{ color: "red" }}>
+//           B1_new
+//           <div style={{ color: "red" }}>C1_new</div>
+//           <div style={{ color: "red" }}>C2_new</div>
+//         </div>
+//         <div id="B2" style={{ color: "red" }}>
+//           B2_new
+//         </div>
+//         <div id="B3">B3</div>
+//       </div>
+//     );
+//     ReactDOM.render(element2, document.getElementById("root"));
+//   },
+//   false
+// );
+
+// document.getElementById("btn2").addEventListener(
+//   "click",
+//   () => {
+//     const element2 = (
+//       <div id="A1" style={{ color: "red" }}>
+//         A1
+//         <div id="B1" style={{ color: "red" }}>
+//           B1
+//           <div style={{ color: "red" }}>C1</div>
+//           <div style={{ color: "red" }}>C2</div>
+//         </div>
+//         <div id="B2" style={{ color: "red" }}>
+//           B2
+//         </div>
+//       </div>
+//     );
+//     ReactDOM.render(element2, document.getElementById("root"));
+//   },
+//   false
+// );
+class Counter extends React.Component {
+  state = {
+    count: 0,
+  };
+  handle = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
+  render() {
+    return (
+      <div>
+        <p>{this.state.count}</p>
+        <button onClick={this.handle}>增加</button>
+      </div>
+    );
+  }
+}
+ReactDOM.render(<Counter />, document.getElementById("root"));
